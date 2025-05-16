@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulaire 2 - Souhaits - Ferréol ADIMOU</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="images/eneam.png" alt="Logo ENEAM" class="logo-left" />
+      <h1>Vos coordonnées & Souhaits</h1>
+      <img src="images/uac.png" alt="Logo UAC" class="logo-right" />
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cv.html">CV</a>
+    <a href="tableaux.html">Tableaux</a>
+    <a href="formulaire1.html">Formulaire 1</a>
+    <a href="formulaire2.html" class="active">Formulaire 2</a>
+    <a href="page1.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+  </nav>
+
+  <main class="form-wrapper">
+    <form action="#" method="post" class="form-box">
+      <fieldset>
+        <legend>Vos coordonnées</legend>
+
+        <div class="form-row">
+          <label for="nom">Quel est votre nom ?</label>
+          <input type="text" id="nom" name="nom" required />
+        </div>
+
+        <div class="form-row">
+          <label for="prenom">Quel est votre prénom ?</label>
+          <input type="text" id="prenom" name="prenom" required />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Quel est votre e-mail ?</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="tel">Tapez votre numéro de téléphone</label>
+          <input type="tel" id="tel" name="tel" pattern="[0-9]{8,15}" placeholder="Ex: 12345678" required />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Votre souhait</legend>
+        <div class="checkbox-group">
+          <label><input type="radio" name="souhait" value="Etre riche" required /> Être riche</label>
+          <label><input type="radio" name="souhait" value="Etre célèbre" /> Être célèbre</label>
+          <label><input type="radio" name="souhait" value="Etre encore plus intelligent" /> Être encore plus intelligent</label>
+          <label><input type="radio" name="souhait" value="Autre" id="souhaitAutreRadio" /> Autre...</label>
+        </div>
+        <div class="form-row" id="autreSouhaitRow" style="display:none; margin-top: 10px;">
+          <label for="autreSouhait">Si "Autre", veuillez préciser :</label>
+          <input type="text" id="autreSouhait" name="autreSouhait" />
+        </div>
+      </fieldset>
+
+      <div class="form-buttons">
+        <button type="submit">Envoyer</button>
+        <button type="reset">Réinitialiser</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Ferréol ADIMOU</p>
+  </footer>
+
+  <script>
+    // Affiche ou cache le champ "Autre" selon la sélection
+    const radioAutre = document.getElementById('souhaitAutreRadio');
+    const autreRow = document.getElementById('autreSouhaitRow');
+    const radios = document.querySelectorAll('input[name="souhait"]');
+
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radioAutre.checked) {
+          autreRow.style.display = 'flex';
+        } else {
+          autreRow.style.display = 'none';
+          document.getElementById('autreSouhait').value = '';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

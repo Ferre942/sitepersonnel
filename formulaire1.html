@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formulaire 1 - Inscription Étudiants - Ferréol ADIMOU</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <img src="images/eneam.png" alt="Logo ENEAM" class="logo-left" />
+      <h1>REGISTREMENT DES ETUDIANTS</h1>
+      <img src="images/uac.png" alt="Logo UAC" class="logo-right" />
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="cv.html">CV</a>
+    <a href="tableaux.html">Tableaux</a>
+    <a href="formulaire1.html" class="active">Formulaire 1</a>
+    <a href="formulaire2.html">Formulaire 2</a>
+    <a href="page1.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+  </nav>
+
+  <main class="form-wrapper">
+    <form action="#" method="post" class="form-box">
+      <fieldset>
+        <legend>État Civil</legend>
+
+        <div class="form-row">
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" name="nom" required />
+        </div>
+
+        <div class="form-row">
+          <label for="prenom">Prénom :</label>
+          <input type="text" id="prenom" name="prenom" required />
+        </div>
+
+        <div class="form-row">
+          <label for="dateNaissance">Date de naissance :</label>
+          <input type="date" id="dateNaissance" name="dateNaissance" required />
+        </div>
+
+        <div class="form-row">
+          <label for="mail">Mail :</label>
+          <input type="email" id="mail" name="mail" required />
+        </div>
+
+        <div class="form-row">
+          <label>Sexe :</label>
+          <div class="radio-group">
+            <label><input type="radio" name="sexe" value="Masculin" required /> Masculin</label>
+            <label><input type="radio" name="sexe" value="Féminin" /> Féminin</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Les Diplômes</legend>
+        <div class="checkbox-group diplome-row">
+          <label><input type="checkbox" name="diplomes" value="CEP" /> CEP</label>
+          <label><input type="checkbox" name="diplomes" value="BEPC" /> BEPC</label>
+          <label><input type="checkbox" name="diplomes" value="BAC" /> BAC</label>
+          <label><input type="checkbox" name="diplomes" value="BTS" /> BTS</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Votre adresse</legend>
+        <div class="form-row">
+          <label for="adresse">Adresse :</label>
+          <textarea id="adresse" name="adresse" rows="3" required></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Pays d'origine</legend>
+        <div class="form-row">
+          <label for="pays">Pays :</label>
+          <select id="pays" name="pays" required>
+            <option value="">-- Sélectionnez un pays --</option>
+            <option value="Benin">BENIN</option>
+            <option value="France">FRANCE</option>
+            <option value="Nigeria">NIGERIA</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <div class="form-buttons">
+        <button type="submit">Valider</button>
+        <button type="reset">Réinitialiser</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Ferréol ADIMOU</p>
+  </footer>
+</body>
+</html>
